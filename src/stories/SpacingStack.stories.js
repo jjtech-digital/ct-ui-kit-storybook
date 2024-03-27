@@ -1,5 +1,4 @@
 import SpacingsStack from "./SpacingStack";
-
 const meta = {
   title: "Example/SpacingsStack",
   component: SpacingsStack,
