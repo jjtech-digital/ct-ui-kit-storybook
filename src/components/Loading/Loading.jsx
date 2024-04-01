@@ -1,8 +1,9 @@
 import React from "react";
 import LoadingSpinner from "@commercetools-uikit/loading-spinner";
 
-const LoadingCt = () => {
-  return <LoadingSpinner size="s">Loading text</LoadingSpinner>;
+const LoadingCt = ({scale,maxDelayDuration,children}) => {
+  return <LoadingSpinner scale={scale} maxDelayDuration={maxDelayDuration}>{children}</LoadingSpinner>;
 };
 
 export default LoadingCt;
+ 
