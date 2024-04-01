@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputCt from "./Input";
 import DateInputCt from "./DateInput";
+import DateRangeInputCt from "./DateRangeInput";
 
 export default {
   title: "Example/Inputs",
@@ -121,3 +122,13 @@ export const DateInput = () => {
     </div>
   );
 };
+export const DateRangeInput = () => (
+  <div style={{ width: "40%" }}>
+    {" "}
+    <DateRangeInputCt
+      placeholder="Select a date..."
+      value={["2017-01-11", "2017-01-14"]}
+      onChange={() => {}}
+    />
+  </div>
+);
