@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputCt from "./Input";
 import DateInputCt from "./DateInput";
 import DateRangeInputCt from "./DateRangeInput";
+import DateTimeInputCt from "./DateTimeInput";
 
 export default {
   title: "Example/Inputs",
@@ -132,3 +133,16 @@ export const DateRangeInput = () => (
     />
   </div>
 );
+export const DateTimeInput = () => {
+  const [timedate, setTimedate] = useState("2018-10-04T09:00:00.000Z");
+  return (
+    <div style={{ width: "40%" }}>
+      <DateTimeInputCt
+        placeholder="Select a date..."
+        timeZone="Europe/Berlin"
+        value={timedate}
+        onChange={(event) => setTimedate(event.target.value)}
+      />
+    </div>
+  );
+};
