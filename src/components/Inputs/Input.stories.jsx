@@ -3,6 +3,7 @@ import InputCt from "./Input";
 import DateInputCt from "./DateInput";
 import DateRangeInputCt from "./DateRangeInput";
 import DateTimeInputCt from "./DateTimeInput";
+import LocalizedRichTextInputCt from "./LocalizedRichTextInput";
 
 export default {
   title: "Example/Inputs",
@@ -145,4 +146,7 @@ export const DateTimeInput = () => {
       />
     </div>
   );
+};
+export const LocalizedMoneyInput = () => {
+  return <LocalizedRichTextInputCt />;
 };
