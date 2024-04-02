@@ -130,8 +130,6 @@ export const stack = {
                   display: "flex",
                   flexDirection: "column",
                   gap: `${size.pixels}`,
-                  //   alignItems: "center",
-                  //   justifyContent: "center",
                 }}
               >
                 <div
@@ -139,7 +137,6 @@ export const stack = {
                     backgroundColor: "#2d68a0",
                     height: " 100px",
                     width: " 100px",
-                    // alignItems: "center",
                   }}
                 ></div>
                 <div
