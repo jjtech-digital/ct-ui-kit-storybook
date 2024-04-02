@@ -4,8 +4,8 @@ import DateInputCt from "./DateInput";
 import DateRangeInputCt from "./DateRangeInput";
 import DateTimeInputCt from "./DateTimeInput";
 import LocalizedRichTextInputCt from "./LocalizedRichTextInput";
-import LocalizedTextInputCt from "./LocalizedTextInput";
-import PasswordInputCt from "./LocalizedTextInput";
+import PasswordInputCt from "./PasswordInput";
+import NumberInputCt from "./NumberInput";
 
 export default {
   title: "Example/Inputs",
@@ -165,6 +165,17 @@ export const PasswordInput = () => {
         onChange={(event) => {
           setPassword(event.target.value);
         }}
+      />
+    </div>
+  );
+};
+export const NumberInput = () => {
+  const [number, setnumber] = useState();
+  return (
+    <div style={{ width: "40%" }}>
+      <NumberInputCt
+        value={number}
+        onChange={(event) => setnumber(event.target.value)}
       />
     </div>
   );
