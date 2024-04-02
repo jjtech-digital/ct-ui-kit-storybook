@@ -1,8 +1,10 @@
-import LabelCt from './Label'
+import LabelCt from "./Label";
 
 export default {
-    title:"Example/Label",
-    component:LabelCt
-}
-export const Label = () => <LabelCt/>
-Label.storyName ="Label"
+  title: "Example/Label",
+};
+export const Label = () => (
+  <LabelCt fontWeight="medium" tone={"secondary"}>
+    Label value
+  </LabelCt>
+);
