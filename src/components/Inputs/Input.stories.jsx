@@ -6,6 +6,7 @@ import DateTimeInputCt from "./DateTimeInput";
 import LocalizedRichTextInputCt from "./LocalizedRichTextInput";
 import PasswordInputCt from "./PasswordInput";
 import NumberInputCt from "./NumberInput";
+import MultilineTextInputCt from "./MultilineTextInput";
 
 export default {
   title: "Example/Inputs",
@@ -177,6 +178,17 @@ export const NumberInput = () => {
         value={number}
         onChange={(event) => setnumber(event.target.value)}
       />
+    </div>
+  );
+};
+export const MultilineTextInput = () => {
+  const [text, setText] = useState("");
+  return (
+    <div style={{ width: "40%" }}>
+    <MultilineTextInputCt
+      value={text}
+      onChange={(event) => setText(event.target.value)}
+    />
     </div>
   );
 };
