@@ -1,6 +1,4 @@
 import SpacingCt from "./Spacing";
-
-import Inset from "@commercetools-uikit/spacings-inline";
 import Inline from "@commercetools-uikit/spacings-inline";
 const sizes = [
   { name: "xs", pixels: "4px" },
