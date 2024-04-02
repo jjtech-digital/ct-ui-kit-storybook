@@ -7,6 +7,8 @@ import LocalizedRichTextInputCt from "./LocalizedRichTextInput";
 import PasswordInputCt from "./PasswordInput";
 import NumberInputCt from "./NumberInput";
 import MultilineTextInputCt from "./MultilineTextInput";
+import RadioInputCt from "./SearchTextInput";
+import SearchTextInputCt from "./SearchTextInput";
 
 export default {
   title: "Example/Inputs",
@@ -185,10 +187,23 @@ export const MultilineTextInput = () => {
   const [text, setText] = useState("");
   return (
     <div style={{ width: "40%" }}>
-    <MultilineTextInputCt
-      value={text}
-      onChange={(event) => setText(event.target.value)}
-    />
+      <MultilineTextInputCt
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+      />
+    </div>
+  );
+};
+export const SearchTextInput = () => {
+  const [text, setText] = useState("");
+  return (
+    <div style={{ width: "40%" }}>
+      <SearchTextInputCt
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+        onReset={() => setText("")}
+        onSubmit={() => alert(text)}
+      />
     </div>
   );
 };
