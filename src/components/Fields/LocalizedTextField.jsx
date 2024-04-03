@@ -1,7 +1,7 @@
 import React from "react";
 import { IntlProvider } from "react-intl";
-import LocalizedMultilineTextField from "@commercetools-uikit/localized-multiline-text-field";
-const LocalizedMultilineTextFieldCt = ({
+import LocalizedTextField from "@commercetools-uikit/localized-text-field";
+const LocalizedTextFieldCt = ({
   title,
   description,
   value,
@@ -10,7 +10,7 @@ const LocalizedMultilineTextFieldCt = ({
 }) => {
   return (
     <IntlProvider locale="en">
-      <LocalizedMultilineTextField
+      <LocalizedTextField
         title={title}
         description={description}
         value={value}
@@ -21,4 +21,4 @@ const LocalizedMultilineTextFieldCt = ({
   );
 };
 
-export default LocalizedMultilineTextFieldCt;
+export default LocalizedTextFieldCt;

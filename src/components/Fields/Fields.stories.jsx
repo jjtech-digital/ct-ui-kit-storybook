@@ -3,6 +3,7 @@ import DateFieldsCt from "./DateFields";
 import DateRangeFieldCt from "./DateRangeField";
 import DateTimeFieldCt from "./DateTimeField";
 import LocalizedMultilineTextFieldCt from "./LocalizedMultilineTextField";
+import LocalizedTextFieldCt from "./LocalizedTextField";
 
 export default {
   title: "Example/Fields",
@@ -73,7 +74,35 @@ export const LocalizedMultilineTextField = () => {
       <LocalizedMultilineTextFieldCt
         title="Description"
         description="More information about the product"
+        selectedLanguage="en"
         value={text}
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
+export const LocalizedTextField = () => {
+  const [text, setText] = useState({
+    en: "Parrot that knows how to party",
+    de: "Papagei der ordentlich abfeiert",
+  });
+  const handleChange = (event) => {
+    const language = event.target.language;
+    const updatedText = { ...text };
+    if (language === "en") {
+      updatedText.en = event.target.value;
+    } else if (language === "de") {
+      updatedText.de = event.target.value;
+    }
+
+    setText(updatedText);
+  };
+  return (
+    <div style={{ width: "40%" }}>
+      <LocalizedTextFieldCt
+        title="Description"
+        value={text}
+        selectedLanguage="en"
         onChange={handleChange}
       />
     </div>
