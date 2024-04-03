@@ -1,15 +1,11 @@
 import React from "react";
 import FieldErrors from "@commercetools-uikit/field-errors";
 import { IntlProvider } from "react-intl";
-const FieldErrorCt = () => {
+const FieldErrorCt = ({errors}) => {
   return (
     <IntlProvider locale="en">
       <FieldErrors
-        errors={{
-          missing: true,
-          duplicate: true,
-          minLength: true,
-        }}
+        errors={errors} 
         isVisible={true}
         renderMissingError={(key) => {
           switch (key) {
