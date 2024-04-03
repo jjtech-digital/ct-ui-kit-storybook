@@ -5,6 +5,10 @@ export default {
 }
 export const FieldError = () =>{
     return (
-        <FieldErrorCt/>
+        <FieldErrorCt errors={{
+            missing: true,
+            duplicate: true,
+            minLength: true,
+          }}/>
     )
 }
