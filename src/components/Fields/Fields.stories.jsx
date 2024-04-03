@@ -4,6 +4,7 @@ import DateRangeFieldCt from "./DateRangeField";
 import DateTimeFieldCt from "./DateTimeField";
 import LocalizedMultilineTextFieldCt from "./LocalizedMultilineTextField";
 import LocalizedTextFieldCt from "./LocalizedTextField";
+import MoneyFieldCt from "./MoneyField";
 
 export default {
   title: "Example/Fields",
@@ -104,6 +105,41 @@ export const LocalizedTextField = () => {
         value={text}
         selectedLanguage="en"
         onChange={handleChange}
+      />
+    </div>
+  );
+};
+export const MoneyField = () => {
+  const [currency, setCurrency] = useState({
+    amount: "20",
+    currencyCode: "EUR",
+  });
+  const handleChange = (event) => {
+    console.log(event);
+    const { id, name, value } = event.target;
+    if (id.endsWith(".amount")) {
+      setCurrency((prevState) => ({
+        ...prevState,
+        amount: value,
+      }));
+    }
+
+    if (id.endsWith(".currencyCode")) {
+      setCurrency((prevState) => ({
+        ...prevState,
+        currencyCode: value,
+      }));
+    }
+  };
+  return (
+    <div style={{ width: "40%" }}>
+      <MoneyFieldCt
+        title="Price"
+        value={currency}
+        placeholder="placeholder"
+        onChange={handleChange}
+        currencies={["EUR", "USD"]}
+        description="How much is the fish?"
       />
     </div>
   );
