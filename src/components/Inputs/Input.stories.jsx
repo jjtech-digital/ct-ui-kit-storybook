@@ -7,8 +7,17 @@ import LocalizedRichTextInputCt from "./LocalizedRichTextInput";
 import PasswordInputCt from "./PasswordInput";
 import NumberInputCt from "./NumberInput";
 import MultilineTextInputCt from "./MultilineTextInput";
-import RadioInputCt from "./SearchTextInput";
+import { RadioInputGrp } from "./RadioInputGroup";
 import SearchTextInputCt from "./SearchTextInput";
+import { LocalizedMoneyInputt } from "./LocalizedMoneyInput";
+import { LocalizedMultilineInput } from "./LocalizedMultilineInput";
+import { LocalizedTextInputt } from "./LocalizedTextInput";
+
+import { RadioInput, Spacings } from "@commercetools-frontend/ui-kit";
+import { RichText } from "./RichTextInput";
+import { TextInputt } from "./TextInput";
+import { TimeInputt } from "./TimeInput";
+import { Toggle } from "./ToggleInput";
 
 export default {
   title: "Example/Inputs",
@@ -152,6 +161,72 @@ export const DateTimeInput = () => {
     </div>
   );
 };
+
+export const LocalizedMoneyInput = () => {
+  const [amount, setAmount] = useState("");
+  return (
+    <LocalizedMoneyInputt
+      value={{
+        USD: { currencyCode: "USD", amount: "12.22" },
+        EUR: { currencyCode: "EUR", amount: amount },
+      }}
+      onChangeHandler={(event) => {
+        console.log("event.target.value", event.target.value);
+        setAmount(event.target.value);
+      }}
+      selectedCurrency={"USD"}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isDisabled={false}
+      isReadOnly={false}
+    />
+  );
+};
+
+export const LocalizedMultilineTextInput = () => {
+  const [text, setText] = useState("");
+  return (
+    <LocalizedMultilineInput
+      value={{
+        en: text,
+        de: "House",
+      }}
+      onChangeHandler={(event) => {
+        console.log("event.target.value", event.target.value);
+        setText(event.target.value);
+      }}
+      selectedLanguage={"en"}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isDisabled={false}
+      isReadOnly={false}
+      isAutofocussed={true}
+    />
+  );
+};
+
+export const LocalizedTextInput = () => {
+  const [text, setText] = useState("");
+  return (
+    <LocalizedTextInputt
+      value={{
+        en: text,
+        de: "House",
+      }}
+      onChangeHandler={(event) => {
+        console.log("event.target.value", event.target.value);
+        setText(event.target.value);
+      }}
+      selectedLanguage={"en"}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isDisabled={false}
+      isReadOnly={false}
+      isAutofocussed={true}
+    />
+  );
+};
+
 export const LocalizedRichTextInput = () => {
   return (
     <div style={{ width: "40%" }}>
@@ -194,6 +269,46 @@ export const MultilineTextInput = () => {
     </div>
   );
 };
+
+export const RadioInputGroup = () => {
+  const [val, setVal] = useState("apple");
+  return (
+    <RadioInputGrp
+      name="fruits"
+      onChangeHandler={(e) => setVal(e.target.value)}
+      selectedValue={val}
+    >
+      <RadioInput.Option
+        value="apple"
+        style={{ width: "22px", height: "22px" }}
+      >
+        <Spacings.Inline alignItems="center">
+          {" "}
+          <div>🍎</div> Apple{" "}
+        </Spacings.Inline>
+      </RadioInput.Option>
+      <RadioInput.Option value="banana">
+        <Spacings.Inline alignItems="center">
+          {" "}
+          <div>🍌</div> Banana{" "}
+        </Spacings.Inline>
+      </RadioInput.Option>
+      <RadioInput.Option
+        value="pineapple"
+        additionalContent="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"
+      >
+        <Spacings.Inline alignItems="center">
+          {" "}
+          <div>🍍</div> Pineapple{" "}
+        </Spacings.Inline>
+      </RadioInput.Option>
+    </RadioInputGrp>
+  );
+};
+
+export const RichTextInput = () => {
+  return <RichText />;
+};
 export const SearchTextInput = () => {
   const [text, setText] = useState("");
   return (
@@ -205,5 +320,43 @@ export const SearchTextInput = () => {
         onSubmit={() => alert(text)}
       />
     </div>
+  );
+};
+
+export const TextInput = () => {
+  const [textValue, setTextValue] = useState("");
+  return (
+    <TextInputt
+      value={textValue}
+      onChangeHandler={(e) => setTextValue(e.target.value)}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isAutofocussed={false}
+    />
+  );
+};
+
+export const TimeInput = () => {
+  const [time, setTime] = useState("");
+  return (
+    <TimeInputt
+      value={time}
+      onChangeHandler={(e) => setTime(e.target.value)}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isAutofocussed={false}
+    />
+  );
+};
+
+export const ToggleInput = () => {
+  const [on, setOn] = useState(false);
+  return (
+    <Toggle
+      isDisabled={false}
+      isChecked={on}
+      onChangeHandler={() => setOn(!on)}
+      size="small"
+    />
   );
 };
