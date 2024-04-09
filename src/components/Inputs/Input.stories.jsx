@@ -18,6 +18,8 @@ import { RichText } from "./RichTextInput";
 import { TextInputt } from "./TextInput";
 import { TimeInputt } from "./TimeInput";
 import { Toggle } from "./ToggleInput";
+import { MoneyInputt } from "./MoneyInput";
+import { SelectableSearch } from "./SelectableSearch";
 
 export default {
   title: "Example/Inputs",
@@ -247,6 +249,19 @@ export const PasswordInput = () => {
     </div>
   );
 };
+
+export const MoneyInput = () => {
+  return (
+    <MoneyInputt
+      currencies={["EUR", "USD", "AED", "KWD"]}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      isAutofocussed={false}
+      isDisabled={false}
+      isReadOnly={false}
+    />
+  );
+};
 export const NumberInput = () => {
   const [number, setnumber] = useState();
   return (
@@ -309,6 +324,7 @@ export const RadioInputGroup = () => {
 export const RichTextInput = () => {
   return <RichText />;
 };
+
 export const SearchTextInput = () => {
   const [text, setText] = useState("");
   return (
@@ -320,6 +336,88 @@ export const SearchTextInput = () => {
         onSubmit={() => alert(text)}
       />
     </div>
+  );
+};
+
+export const SelectableSearchInput = () => {
+  const options = [
+    {
+      label: "Animals 1",
+      options: [
+        { value: "platypus", label: "Platypus" },
+        { value: "goat", label: "Goat" },
+        { value: "giraffe", label: "Giraffe" },
+        { value: "whale", label: "Whale" },
+        { value: "killer-whale", label: "Killer Whale", isDisabled: true },
+        { value: "otter", label: "Otter" },
+        { value: "elephant", label: "Elephant" },
+        { value: "rat", label: "Rat" },
+        { value: "anteater", label: "Anteater" },
+        { value: "alligator", label: "Alligator" },
+        { value: "dog", label: "Dog" },
+        { value: "pig", label: "Pig" },
+        { value: "hippopotamus", label: "Hippopotamus" },
+        { value: "lion", label: "Lion" },
+        { value: "monkey", label: "Monkey" },
+        { value: "kangaroo", label: "Kangaroo" },
+        { value: "flamingo", label: "Flamingo" },
+        { value: "moose", label: "Moose" },
+      ],
+    },
+    {
+      label: "Animals 2",
+      options: [
+        { value: "prairie-dog", label: "Prairie Dog", isDisabled: true },
+        { value: "snake", label: "Snake" },
+        { value: "porcupine", label: "Porcupine" },
+        { value: "stingray", label: "Stingray" },
+        { value: "panther", label: "Panther" },
+        { value: "lizard", label: "Lizard" },
+        { value: "parrot", label: "Parrot" },
+        { value: "dolphin", label: "Dolphin" },
+        { value: "chicken", label: "Chicken" },
+        { value: "sloth", label: "Sloth" },
+        { value: "shark", label: "Shark" },
+        { value: "ape", label: "Ape" },
+        { value: "bear", label: "Bear" },
+        { value: "cheetah", label: "Cheetah" },
+        { value: "camel", label: "Camel" },
+        { value: "beaver", label: "Beaver" },
+        { value: "armadillo", label: "Armadillo" },
+        { value: "tiger", label: "Tiger" },
+      ],
+    },
+    {
+      label: "Animals 3",
+      options: [
+        { value: "llama", label: "Llama" },
+        { value: "seal", label: "Seal" },
+        { value: "hawk", label: "Hawk" },
+        { value: "wolf", label: "Wolf" },
+        { value: "yak", label: "Yak" },
+        { value: "rhinoceros", label: "Rhinoceros" },
+        { value: "alpaca", label: "Alpaca" },
+        { value: "zebra", label: "Zebra" },
+        { value: "cat", label: "Cat" },
+        { value: "rabbit", label: "Rabbit" },
+        { value: "turtle", label: "Turtle" },
+        { value: "cow", label: "Cow" },
+        { value: "turkey", label: "Turkey" },
+        { value: "deer", label: "Deer" },
+      ],
+    },
+  ];
+  return (
+    <SelectableSearch
+      options={options}
+      onBlurHandler={() => {}}
+      onFocusHandler={() => {}}
+      onSubmit={(val) => alert(JSON.stringify(val))}
+      onReset={() => {}}
+      isAutofocussed={false}
+      isDisabled={false}
+      isReadOnly={false}
+    />
   );
 };
 
