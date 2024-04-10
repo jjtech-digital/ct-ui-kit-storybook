@@ -1,31 +1,37 @@
 import React from "react";
-import { SearchSelectInput } from "@commercetools-frontend/ui-kit";
+import { SelectInput } from "@commercetools-frontend/ui-kit";
 import { IntlProvider } from "react-intl";
 import "@commercetools-uikit/design-system/materials/custom-properties.css";
 
-export const SearchSelect = ({
+export const Select = ({
   id,
   name,
+  value,
   isAutofocussed,
   isDisabled,
   isReadOnly,
   isMulti,
-  loadOptions,
-  value,
+  options,
+  onBlurHandler,
+  onFocusHandler,
+  onChange,
+  onInputChange,
 }) => {
   return (
     <IntlProvider locale="en">
-      <SearchSelectInput
+      <SelectInput
         id={id}
         name={name}
         value={value}
-        horizontalConstraint={7}
+        onChange={onChange}
+        onBlur={onBlurHandler}
+        onFocus={onFocusHandler}
+        options={options}
         isAutofocussed={isAutofocussed}
         isDisabled={isDisabled}
         isReadOnly={isReadOnly}
         isMulti={isMulti}
-        placeholder="Select.."
-        loadOptions={loadOptions}
+        onInputChange={onInputChange}
       />
     </IntlProvider>
   );

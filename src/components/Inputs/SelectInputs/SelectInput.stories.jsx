@@ -4,6 +4,7 @@ import { AsyncSelectInputt } from "./AsyncSelectInput";
 import { CreatableSelect } from "./CreatableSelect";
 import { options, colourOptions, colorsOptions } from "./mock-data";
 import { SearchSelect } from "./SearchSelect";
+import { Select } from "./Select";
 
 export default {
   title: "Example/Inputs/SelectInputs",
@@ -102,6 +103,26 @@ export const SearchSelectInput = () => {
       name={"colorss"}
       value={selectOptn}
       loadOptions={loadOptions}
+      onChange={(event) => setSelectOptn(event.target.value)}
+      onBlur={() => {}}
+      onFocus={() => {}}
+      onInputChange={() => {}}
+      isAutofocussed={false}
+      isDisabled={false}
+      isReadOnly={false}
+      isMulti={false}
+    />
+  );
+};
+
+export const SelectInput = () => {
+  const [selectOptn, setSelectOptn] = React.useState("" || []);
+  return (
+    <Select
+      id={"select"}
+      name={"select-ip"}
+      value={selectOptn}
+      options={options}
       onChange={(event) => setSelectOptn(event.target.value)}
       onBlur={() => {}}
       onFocus={() => {}}
