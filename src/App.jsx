@@ -1,11 +1,10 @@
 import "./App.css";
-import CtGrid from "./stories/CtGrid";
 
 function App() {
   return (
-    <>
-      <CtGrid />
-    </>
+    <div className="app">
+      <h1>Commercetools storybook</h1>
+    </div>
   );
 }
 
