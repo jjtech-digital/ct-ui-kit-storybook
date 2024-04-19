@@ -9,12 +9,20 @@ export const TableWithButton = ({
 }) => {
   return (
     <DataGrid
+      sx={{
+        fontFamily: "Inter",
+        "& .Mui-checked": { color: "#101050 !important" },
+        "& .MuiDataGrid-row.Mui-selected": {
+          backgroundColor: `rgba(211, 204, 255, 0.3)!important`,
+        },
+      }}
       rows={rows}
       columns={cols}
       initialState={{
         columns: { columnVisibilityModel: ColVisibleObj },
         pagination: { paginationModel: { pageSize: initialPageSize } },
       }}
+      checkboxSelection
     />
   );
 };

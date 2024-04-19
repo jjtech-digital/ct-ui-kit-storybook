@@ -11,6 +11,13 @@ export const TableWithPagination = ({
 }) => {
   return (
     <DataGrid
+      sx={{
+        fontFamily: "Inter",
+        "& .Mui-checked": { color: "#101050 !important" },
+        "& .MuiDataGrid-row.Mui-selected": {
+          backgroundColor: `rgba(211, 204, 255, 0.3)!important`,
+        },
+      }}
       rows={rows}
       columns={cols}
       initialState={{
@@ -19,6 +26,7 @@ export const TableWithPagination = ({
       }}
       pageSizeOptions={pageSizeOptions}
       paginationMode={paginationMode}
+      checkboxSelection
     />
   );
 };
